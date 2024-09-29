@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "MyAndroid"
 include(":app")
- 
+include(":core:designsystem")
