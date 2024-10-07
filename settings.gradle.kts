@@ -22,3 +22,7 @@ dependencyResolutionManagement {
 rootProject.name = "MyAndroid"
 include(":app")
 include(":core:designsystem")
+include(":feature:foryou")
+include(":feature:bookmarks")
+include(":feature:interests")
+include(":feature:search")

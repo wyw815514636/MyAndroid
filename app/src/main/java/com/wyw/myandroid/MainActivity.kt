@@ -12,13 +12,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.google.sample.apps.nowinandroid.ui.NiaApp
+import com.google.sample.apps.nowinandroid.ui.rememberNiaAppState
 import com.wyw.myandroid.ui.theme.MyAndroidTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+
         setContent {
+            val appState = rememberNiaAppState()
             MyAndroidTheme {
                 /*Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
@@ -26,7 +31,7 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.padding(innerPadding)
                     )
                 }*/
-                NiaApp()
+                NiaApp(appState)
 
             }
         }

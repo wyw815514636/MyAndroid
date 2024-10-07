@@ -59,8 +59,13 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.navigation.compose)
 
     implementation(project(":core:designsystem"))
+    implementation(project(":feature:foryou"))
+    implementation(project(":feature:bookmarks"))
+    implementation(project(":feature:interests"))
+    implementation(project(":feature:search"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -22,6 +22,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import com.google.sample.apps.nowinandroid.navigation.TopLevelDestination
 import com.google.samples.apps.nowinandroid.core.designsystem.component.NiaNavigationDefaults
 import com.google.samples.apps.nowinandroid.core.designsystem.component.NiaNavigationSuiteScaffold
@@ -30,13 +31,14 @@ import com.wyw.myandroid.Greeting
 
 @Composable
 internal fun NiaApp(
+    appState: NiaAppState,
     modifier: Modifier = Modifier,
     windowAdaptiveInfo: WindowAdaptiveInfo = currentWindowAdaptiveInfo(),
 ) {
 
     NiaNavigationSuiteScaffold(
         navigationSuiteItems = {
-            TopLevelDestination.entries.forEach { destination ->
+            appState.topLevelDestinations.forEach { destination ->
                 item(
                     selected = true,
                     onClick = { },
@@ -52,7 +54,7 @@ internal fun NiaApp(
                             contentDescription = null,
                         )
                     },
-                    label = { Text("测试") },
+                    label = {  Text(stringResource(destination.iconTextId)) },
                     modifier = Modifier.testTag("NiaNavItem")
                 )
             }
